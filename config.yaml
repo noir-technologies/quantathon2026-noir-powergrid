@@ -1,0 +1,26 @@
+# NOIR Technologies – Quantathon CR 2026 · Challenge 1
+# Centralized configuration for reproducibility
+
+graph:
+  source: "ICE"                    # Instituto Costarricense de Electricidad
+  data_path: "data/raw/ice_grid.json"
+  n_nodes_min: 6
+  n_nodes_max: 12
+
+qaoa:
+  backend: "pennylane"             # pennylane | qiskit | guppy
+  emulator: "quantinuum-h2"        # for final runs
+  p_values: [1, 2, 3]
+  n_runs: 10                       # min 5 per requirements
+  optimizer: "BFGS"
+  seed: 42
+
+classical:
+  run_greedy: true
+  run_goemans_williamson: true
+  run_brute_force: true            # feasible for <= 20 nodes
+
+output:
+  figures_dir: "results/figures"
+  runs_dir: "results/runs"
+  dpi: 300
