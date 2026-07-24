@@ -62,7 +62,7 @@ quantathon2026-noir-powergrid/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/NOIR-Technologies-Cenfotec/quantathon2026-noir-powergrid.git
+git clone https://github.com/noir-technologies/quantathon2026-noir-powergrid.git
 cd quantathon2026-noir-powergrid
 
 # 2. Create and activate a virtual environment
