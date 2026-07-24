@@ -1,202 +1,318 @@
 # Quantathon CR 2026 · Challenge 1
 
-Solución reproducible de Max-Cut ponderado sobre cuatro subgrafos reales de
-la red de transmisión del ICE, usando QUBO, líneas base clásicas y QAOA con
-Guppy.
+Solución reproducible de Max-Cut ponderado sobre cuatro subgrafos derivados de
+datos geoespaciales oficiales de la red de transmisión del Instituto
+Costarricense de Electricidad (ICE), utilizando QUBO, líneas base clásicas y
+QAOA con Guppy.
+
+Repositorio oficial:
+[noir-technologies/quantathon2026-noir-powergrid](https://github.com/noir-technologies/quantathon2026-noir-powergrid)
 
 ## Estado verificable
 
-- Región: Central.
+- Región analizada: Central.
 - Instancias: G6, G8, G10 y G12.
-- Profundidades QAOA: p=1, p=2 y p=3.
-- Optimización: 6, 10 y 12 reinicios por profundidad, respectivamente.
-- Variabilidad de optimización: 6, 10 y 12 inicializaciones para p=1, p=2 y
-  p=3, respectivamente.
-- Incertidumbre de muestreo complementaria: 30 lotes de 512 tiros del mismo
-  estado optimizado para cada combinación de tamaño y profundidad.
+- Profundidades QAOA: `p=1`, `p=2` y `p=3`.
+- Inicializaciones del optimizador: 6, 10 y 12 para `p=1`, `p=2` y `p=3`,
+  respectivamente.
+- Incertidumbre de muestreo: 30 lotes de 512 tiros del mismo estado optimizado
+  para cada combinación de tamaño y profundidad.
 - Guppy local: 12 configuraciones validadas con 512 tiros.
-- SelenePlus: G6/G8/G10/G12, p=3, 512 tiros, con `HeliosRuntime` y
-  `QSystemErrorModel(alpha)`.
-- Resultado SelenePlus: cuatro grafos completados en un único trabajo remoto.
-  No se presenta como ejecución en hardware físico.
+- SelenePlus: G6, G8, G10 y G12 con `p=3`, 512 tiros,
+  `HeliosRuntime` y `QSystemErrorModel(alpha)`.
+- Los cuatro grafos se ejecutaron en un único trabajo remoto.
+- SelenePlus se utiliza como backend de emulación; los resultados no se
+  presentan como una ejecución en hardware cuántico físico.
 
-## Punto único de entrada
+## Cómo obtener el proyecto desde GitHub
 
-La ruta recomendada regenera las seis figuras y las cuatro tablas desde los
-resultados detallados incluidos, actualiza el manifiesto y valida la entrega:
+### Opción 1: clonar el repositorio con Git
+
+Esta opción es la recomendada porque permite descargar futuras actualizaciones.
+
+```bash
+git clone https://github.com/noir-technologies/quantathon2026-noir-powergrid.git
+cd quantathon2026-noir-powergrid
+```
+
+Para actualizar posteriormente una copia local:
+
+```bash
+git switch main
+git pull origin main
+```
+
+Antes de ejecutar `git pull`, se recomienda guardar o confirmar cualquier
+cambio local para evitar conflictos.
+
+### Opción 2: descargar un archivo ZIP
+
+1. Abrir el
+   [repositorio en GitHub](https://github.com/noir-technologies/quantathon2026-noir-powergrid).
+2. Seleccionar **Code**.
+3. Seleccionar **Download ZIP**.
+4. Descomprimir el archivo.
+5. Abrir una terminal dentro de la carpeta descomprimida.
+
+La descarga ZIP permite ejecutar el proyecto, pero no incluye el historial de
+Git ni facilita la instalación de actualizaciones mediante `git pull`.
+
+## Requisitos
+
+- Git, si se utiliza la opción de clonación.
+- Python 3.11.
+- Un entorno capaz de instalar las dependencias de `requirements.txt`.
+- Acceso y credenciales de Quantinuum Nexus únicamente para operaciones remotas
+  autorizadas.
+
+La validación local y la regeneración de productos a partir de los resultados
+incluidos no requieren enviar un nuevo trabajo remoto.
+
+## Instalación
+
+Se recomienda utilizar un entorno virtual.
+
+### macOS o Linux
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### Windows PowerShell
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+## Ejecución recomendada
+
+El proyecto utiliza un único punto de entrada:
 
 ```bash
 python scripts/ejecutar_entrega.py
 ```
 
-Para recalcular el flujo local desde los grafos y después regenerar todos los
-productos finales:
+Este comando regenera las seis figuras y las cuatro tablas a partir de los
+resultados detallados incluidos, actualiza el manifiesto y valida la entrega.
 
-```bash
-python scripts/ejecutar_entrega.py --modo completo
-```
+### Validación rápida
 
-Este modo reconstruye primero G6/G8/G10/G12 desde `datos/crudos/` mediante
-`scripts/construir_grafo_ice.py`, publica automáticamente la salida canónica
-en `datos/grafos/` y luego ejecuta y guarda los notebooks. `build/` es
-únicamente un área temporal regenerable y no forma parte de la entrega.
-
-La recuperación del trabajo SelenePlus existente es explícita y nunca habilita
-un envío nuevo:
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/noir-technologies/quantathon2026-noir-powergrid.git
-cd quantathon2026-noir-powergrid
-
-# 2. Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run the full pipeline
-python run_all.py
-
-# Optional flags
-python run_all.py --p-max 3 --n-runs 10 --seed 42
-```
-
-All figures are saved to `results/figures/` and raw run data to `results/runs/`.
-
----
-
-## Methods
-
-### 1. Graph Construction
-The ICE power transmission network is modeled as a weighted graph G = (V, E) with 6–12 nodes. Edge weights represent transmission line capacity. Source: [datos-ice-se.opendata.arcgis.com](https://datos-ice-se.opendata.arcgis.com).
-
-### 2. QUBO Formulation
-Max-Cut is cast as a QUBO: **minimize xᵀ Q x**, where x ∈ {0,1}ⁿ encodes node partitions. The QUBO is verified on small test instances (brute force) before running on the ICE graph.
-
-### 3. QAOA Implementation
-The QUBO maps to an Ising cost Hamiltonian H_C. QAOA builds a parameterized circuit with **p layers** of alternating `e^(-iγH_C)` and `e^(-iβH_B)` gates, classically optimized with BFGS.
-
-**We run ≥ 5 independent initializations per p value and report mean ± std of the approximation ratio.**
-
-### 4. Classical Baselines
-| Method | Approximation Ratio |
-|---|---|
-| Greedy | ~0.5 |
-| Goemans-Williamson (SDP) | ≥ 0.878 |
-| Brute Force | Optimal (exact) |
-
-Reference: Goemans & Williamson (1995), JACM 42(6).
-
----
-
-## Key Results
-
-> 🔄 *Results will be filled in after runs complete.*
-
-| Method | Approximation Ratio r | Notes |
-|---|---|---|
-| Greedy | — | Baseline lower bound |
-| Goemans-Williamson | — | Classical state-of-the-art |
-| QAOA p=1 | — | mean ± std, ≥5 runs |
-| QAOA p=2 | — | mean ± std, ≥5 runs |
-| QAOA p=3 | — | mean ± std, ≥5 runs |
-
-**Target:** QAOA at p=1 achieving r ≥ 0.6 on the 6-node test instance.
-
----
-
-## Honest Limitations
-
-As required by the judging rubric:
-
-- QAOA does **not** currently outperform Goemans-Williamson for Max-Cut on any graph instance.
-- At p=1, the guaranteed approximation ratio (0.6924) is strictly below GW (0.878).
-- Results on the Quantinuum H2 **emulator** do not account for real hardware noise.
-- Runtime scales exponentially with graph size for brute-force; GW is polynomial.
-
----
-
-## Submission Checklist
-
-- [ ] Graph data file with nodes, edges, weights, and ICE source
-- [ ] QUBO formulation with documented penalty terms (`src/qaoa/qubo.py`)
-- [ ] Approximation ratio plot: r vs. p (with error bars)
-- [ ] GW + greedy baseline numbers
-- [ ] Honest limitations section (above)
-- [ ] Technical report PDF (max 8 pages)
-- [ ] 5-minute presentation slides
-- [ ] SDK statement ≤ 200 words (`docs/sdk_statement.md`)
-- [ ] `run_all.py` reproduces all figures from a clean environment
-
----
-
-## References
-
-- Farhi, E., Goldstone, J., & Gutmann, S. (2014). A Quantum Approximate Optimization Algorithm. [arXiv:1411.4028](https://arxiv.org/abs/1411.4028)
-- Goemans, M. X., & Williamson, D. P. (1995). Improved approximation algorithms for maximum cut and satisfiability problems using semidefinite programming. *JACM 42*(6), 1115–1145.
-- Blekos, K. et al. (2024). A review on Quantum Approximate Optimization Algorithm and its variants.
-- Jin, Y. et al. (2025). Iceberg QEC code. [arXiv:2504.21172](https://arxiv.org/abs/2504.21172)
-- ICE Open Data: [datos-ice-se.opendata.arcgis.com](https://datos-ice-se.opendata.arcgis.com)
-
----
-
-## Team
-
-**NOIR Technologies** · Quantum Computing Lab · Universidad Cenfotec, Costa Rica
-
-| Name | Role |
-|---|---|
-| *(Add team members)* | *(Add roles)* |
-
----
-
-*Quantathon CR 2026 — Judges reward rigour and honesty over ambition. A modest, well-scoped, fully reproducible result scores higher than an impressive-sounding claim that cannot be verified.*
-python scripts/ejecutar_entrega.py --modo completo --recuperar-seleneplus
-```
-
-También existe una comprobación rápida que no modifica resultados:
+Para comprobar la integridad de la entrega sin recalcular los experimentos:
 
 ```bash
 python scripts/ejecutar_entrega.py --modo validar
 ```
 
-Para instalar:
+### Reconstrucción completa del flujo local
+
+Para reconstruir los grafos desde los datos crudos, ejecutar el flujo local y
+regenerar los productos finales:
 
 ```bash
-python -m pip install -r requirements.txt
+python scripts/ejecutar_entrega.py --modo completo
 ```
 
-Los notebooks permanecen separados para facilitar la revisión técnica, pero el
-script anterior es el punto de entrada reproducible.
+Este modo:
 
-## Estructura
+1. reconstruye G6, G8, G10 y G12 desde `datos/crudos/`;
+2. publica la salida canónica en `datos/grafos/`;
+3. ejecuta y guarda los notebooks correspondientes;
+4. regenera las tablas, figuras y validaciones.
+
+La carpeta `build/` es un área temporal regenerable y no forma parte de la
+entrega final.
+
+### Recuperación del trabajo remoto existente
+
+La recuperación del trabajo SelenePlus existente debe habilitarse
+explícitamente:
+
+```bash
+python scripts/ejecutar_entrega.py --modo completo --recuperar-seleneplus
+```
+
+Esta opción recupera el trabajo registrado y no habilita el envío automático
+de un nuevo experimento remoto.
+
+## Uso de GitHub para colaborar
+
+Para proponer cambios sin modificar directamente la rama principal:
+
+1. Crear un **fork** desde la página del repositorio.
+2. Clonar el fork.
+3. Crear una rama descriptiva.
+4. Confirmar y publicar los cambios.
+5. Abrir un **Pull Request** hacia el repositorio original.
+
+Ejemplo:
+
+```bash
+git clone https://github.com/USUARIO/quantathon2026-noir-powergrid.git
+cd quantathon2026-noir-powergrid
+git switch -c mejora-documentacion
+
+# Después de modificar y validar los archivos:
+git status
+git add README.md
+git commit -m "Mejora las instrucciones de uso"
+git push -u origin mejora-documentacion
+```
+
+Después del `push`, GitHub mostrará la opción para crear el Pull Request.
+
+Los errores reproducibles, preguntas técnicas y propuestas también pueden
+documentarse en la sección **Issues** del repositorio. Se recomienda incluir:
+
+- sistema operativo y versión de Python;
+- comando ejecutado;
+- mensaje de error completo;
+- pasos mínimos para reproducir el problema;
+- confirmación de si se utilizó simulación local o recuperación remota.
+
+No deben publicarse tokens, credenciales de Nexus, llaves privadas ni otros
+secretos en commits, Issues o Pull Requests.
+
+## Estructura del repositorio
 
 - `datos/crudos/`: capas, catálogos y fuentes oficiales.
-- `datos/grafos/`: G6/G8/G10/G12 en CSV y GraphML.
+- `datos/grafos/`: G6, G8, G10 y G12 en CSV y GraphML.
 - `scripts/construir_grafo_ice.py`: constructor definitivo de los grafos.
-- `resultados/clasicos/`: QUBO, exacto, greedy, recocido y GW.
+- `scripts/ejecutar_entrega.py`: punto único de entrada.
+- `resultados/clasicos/`: QUBO, solución exacta, greedy, recocido y
+  Goemans-Williamson.
 - `resultados/qaoa_local/`: optimizaciones, mediciones y resúmenes.
 - `resultados/remoto/`: evidencia SelenePlus separada.
 - `resultados/tablas_finales/`: comparaciones de calidad, costo, ruido y
   robustez.
-- `figuras/`: seis figuras finales, incluida la comparación directa entre
-  simulación ideal y SelenePlus con ruido.
-- `docs/`: auditoría, interpretación y guía de tiros.
-- `build/`: salida temporal regenerable; se excluye del paquete final.
+- `figuras/`: seis figuras finales, incluida la comparación entre simulación
+  ideal y SelenePlus con ruido.
+- `notebooks/`: desarrollo y validación técnica de las etapas del proyecto.
+- `docs/`: informe, auditoría, interpretación y guía de tiros.
+- `build/`: salida temporal regenerable.
 
-## Limitación central
+## Métodos
 
-Las cuatro instancias son árboles bipartitos con pesos positivos. Su Max-Cut
-óptimo corta todas las aristas y coincide con la suma de pesos. Esto permite
-validar con rigor el flujo QUBO/QAOA, pero no representa una instancia
-clásicamente difícil y no respalda una afirmación de ventaja cuántica.
+### 1. Construcción de los grafos
 
-Por esta razón, la entrega no utiliza «la mejor solución observada» como
-métrica principal: con 512 tiros esa medida se satura en 1.0. Se reportan la
-calidad esperada, la probabilidad de óptimo por tiro, la variabilidad entre
-reinicios y el intercambio entre profundidad y operaciones ZZ.
+La red se representa como un grafo ponderado `G=(V,E,w)`. Los nodos representan
+subestaciones y las aristas representan conexiones de transmisión. Los pesos
+combinan la longitud del corredor y su tensión nominal.
 
-No se añadieron aristas artificiales: se priorizó la fidelidad a los datos del
-ICE y la reproducibilidad.
+Fuente:
+[Portal de datos abiertos del ICE](https://datos-ice-se.opendata.arcgis.com/).
+
+El peso es un proxy reproducible de exposición física. No representa una
+métrica oficial de riesgo, flujo, capacidad, demanda ni criticidad operativa.
+
+### 2. Formulación QUBO
+
+Max-Cut se expresa como:
+
+```text
+C(x) = Σ w_ij (x_i + x_j - 2 x_i x_j)
+```
+
+Para utilizar una convención QUBO de minimización se minimiza `-C(x)`. La
+formulación se verificó en instancias pequeñas mediante evaluación directa,
+fuerza bruta y comparación con el Hamiltoniano de Ising.
+
+### 3. Implementación de QAOA
+
+La QUBO se transforma en un Hamiltoniano de costo de Ising. QAOA alterna capas
+de costo y mezcla, cuyos parámetros se optimizan clásicamente.
+
+La implementación final utiliza Guppy, profundidades `p=1,2,3`, múltiples
+inicializaciones y el optimizador L-BFGS-B. Los resultados principales reportan
+la media y la desviación estándar entre inicializaciones, no únicamente el
+mejor reinicio.
+
+### 4. Líneas base clásicas
+
+La comparación incluye:
+
+- bipartición exacta del árbol;
+- fuerza bruta para verificación;
+- Goemans-Williamson;
+- greedy;
+- recocido simulado;
+- referencia aleatoria teórica `r=0.5`.
+
+## Resultados principales
+
+En simulación ideal, QAOA mejoró al aumentar `p`, pero perdió calidad al crecer
+la instancia y no superó los métodos clásicos.
+
+Para `p=3`, la media entre inicializaciones fue aproximadamente:
+
+| Instancia | QAOA ideal, media | Mejor reinicio ideal | SelenePlus con ruido |
+|---|---:|---:|---:|
+| G6 | 0.894 | 0.917 | 0.673 |
+| G8 | 0.874 | 0.894 | 0.518 |
+| G10 | 0.853 | 0.871 | 0.515 |
+| G12 | 0.840 | 0.854 | 0.501 |
+
+La ejecución SelenePlus mostró una degradación marcada frente al mejor valor
+ideal. En G8, G10 y G12, el resultado quedó próximo a la referencia aleatoria
+de 0.5.
+
+Solo existe una ejecución remota de 512 tiros por instancia. Por tanto, estos
+datos describen el trabajo observado, pero no permiten estimar la media,
+desviación o reproducibilidad del ruido del backend.
+
+## Limitaciones honestas
+
+- No se demostró ventaja cuántica.
+- No hubo ejecución en una computadora cuántica física.
+- SelenePlus es un backend de emulación con un modelo de errores.
+- No se comparan tiempos de pared como evidencia de aceleración.
+- Las cuatro instancias son árboles bipartitos con pesos positivos y se
+  resuelven exactamente en tiempo lineal mediante bipartición.
+- QAOA no superó la solución exacta, Goemans-Williamson, recocido ni greedy.
+- La ejecución con ruido se realizó una sola vez por instancia.
+- No se aplicó mitigación de ruido ni corrección de errores cuánticos.
+- Los pesos no representan riesgo, flujo eléctrico ni criticidad oficial.
+- Max-Cut produce candidatos topológicos, no un diseño operativo de zonas de
+  falla para el ICE.
+
+## Reproducibilidad
+
+El flujo utiliza semillas deterministas y separa:
+
+1. datos de entrada;
+2. construcción geoespacial;
+3. líneas base clásicas;
+4. optimización QAOA;
+5. compilación Guppy/HUGR;
+6. resultados remotos;
+7. tablas, figuras y validaciones.
+
+Las cifras del informe se generan a partir de archivos tabulares versionados.
+No se añadieron aristas artificiales: se priorizaron la fidelidad a los datos
+del ICE, la trazabilidad y la reproducibilidad.
+
+## Referencias
+
+- Farhi, E., Goldstone, J. y Gutmann, S. (2014).
+  [A Quantum Approximate Optimization Algorithm](https://arxiv.org/abs/1411.4028).
+- Goemans, M. X. y Williamson, D. P. (1995). Improved approximation algorithms
+  for maximum cut and satisfiability problems. *JACM*, 42(6), 1115-1145.
+- Blekos, K. et al. (2024). A review on Quantum Approximate Optimization
+  Algorithm and its variants.
+- Jin, Y. et al. (2025).
+  [Iceberg QEC code](https://arxiv.org/abs/2504.21172).
+- [Datos abiertos del ICE](https://datos-ice-se.opendata.arcgis.com/).
+
+## Equipo
+
+**NOIR Technologies · Universidad Cenfotec · Costa Rica**
+
+---
+
+Quantathon CR 2026: se priorizan el rigor, la reproducibilidad y la
+interpretación honesta de los resultados.
