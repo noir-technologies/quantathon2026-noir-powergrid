@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:graphml xmlns:ns0="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <ns0:key id="operational_connectivity_confirmed" for="edge" attr.name="operational_connectivity_confirmed" attr.type="boolean" />
+  <ns0:key id="manual_evidence_files" for="edge" attr.name="manual_evidence_files" attr.type="string" />
+  <ns0:key id="validation_basis" for="edge" attr.name="validation_basis" attr.type="string" />
+  <ns0:key id="evidence_ids" for="edge" attr.name="evidence_ids" attr.type="string" />
+  <ns0:key id="validation_status" for="edge" attr.name="validation_status" attr.type="string" />
+  <ns0:key id="confidence" for="edge" attr.name="confidence" attr.type="string" />
+  <ns0:key id="detour_ratio" for="edge" attr.name="detour_ratio" attr.type="double" />
+  <ns0:key id="max_snap_distance_m" for="edge" attr.name="max_snap_distance_m" attr.type="double" />
+  <ns0:key id="line_names" for="edge" attr.name="line_names" attr.type="string" />
+  <ns0:key id="line_objectids" for="edge" attr.name="line_objectids" attr.type="string" />
+  <ns0:key id="weight" for="edge" attr.name="weight" attr.type="double" />
+  <ns0:key id="raw_weight" for="edge" attr.name="raw_weight" attr.type="double" />
+  <ns0:key id="circuits" for="edge" attr.name="circuits" attr.type="long" />
+  <ns0:key id="voltage_kv" for="edge" attr.name="voltage_kv" attr.type="string" />
+  <ns0:key id="length_km" for="edge" attr.name="length_km" attr.type="double" />
+  <ns0:key id="latitude" for="node" attr.name="latitude" attr.type="double" />
+  <ns0:key id="longitude" for="node" attr.name="longitude" attr.type="double" />
+  <ns0:key id="district" for="node" attr.name="district" attr.type="string" />
+  <ns0:key id="canton" for="node" attr.name="canton" attr.type="string" />
+  <ns0:key id="province" for="node" attr.name="province" attr.type="string" />
+  <ns0:key id="region" for="node" attr.name="region" attr.type="string" />
+  <ns0:key id="name" for="node" attr.name="name" attr.type="string" />
+  <ns0:key id="objectid" for="node" attr.name="objectid" attr.type="long" />
+  <ns0:key id="weight_definition" for="graph" attr.name="weight_definition" attr.type="string" />
+  <ns0:key id="source" for="graph" attr.name="source" attr.type="string" />
+  <ns0:key id="region" for="graph" attr.name="region" attr.type="string" />
+  <ns0:graph edgedefault="undirected">
+    <ns0:node id="ST_38">
+      <ns0:data key="objectid">38</ns0:data>
+      <ns0:data key="name">Colima</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">San Jose</ns0:data>
+      <ns0:data key="canton">Tibas</ns0:data>
+      <ns0:data key="district">Colima</ns0:data>
+      <ns0:data key="longitude">-84.09053677900832</ns0:data>
+      <ns0:data key="latitude">9.952220776832897</ns0:data>
+    </ns0:node>
+    <ns0:node id="ST_63">
+      <ns0:data key="objectid">63</ns0:data>
+      <ns0:data key="name">Escazú</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">San José</ns0:data>
+      <ns0:data key="canton">Escazú</ns0:data>
+      <ns0:data key="district">San Rafael</ns0:data>
+      <ns0:data key="longitude">-84.16153388967174</ns0:data>
+      <ns0:data key="latitude">9.935518320258453</ns0:data>
+    </ns0:node>
+    <ns0:node id="ST_64">
+      <ns0:data key="objectid">64</ns0:data>
+      <ns0:data key="name">Coronado</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">San José</ns0:data>
+      <ns0:data key="canton">Vazquez de Coronado</ns0:data>
+      <ns0:data key="district">Dulce Nombre</ns0:data>
+      <ns0:data key="longitude">-84.01602024869545</ns0:data>
+      <ns0:data key="latitude">9.992876486509516</ns0:data>
+    </ns0:node>
+    <ns0:node id="ST_44">
+      <ns0:data key="objectid">44</ns0:data>
+      <ns0:data key="name">San Miguel</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">Heredia</ns0:data>
+      <ns0:data key="canton">Santo Domingo</ns0:data>
+      <ns0:data key="district">San Miguel</ns0:data>
+      <ns0:data key="longitude">-84.0553698773894</ns0:data>
+      <ns0:data key="latitude">9.98024872904098</ns0:data>
+    </ns0:node>
+    <ns0:node id="ST_28">
+      <ns0:data key="objectid">28</ns0:data>
+      <ns0:data key="name">Belen</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">Heredia</ns0:data>
+      <ns0:data key="canton">Belen</ns0:data>
+      <ns0:data key="district">La Ribera</ns0:data>
+      <ns0:data key="longitude">-84.17279127549419</ns0:data>
+      <ns0:data key="latitude">9.996799472773988</ns0:data>
+    </ns0:node>
+    <ns0:node id="ST_11">
+      <ns0:data key="objectid">11</ns0:data>
+      <ns0:data key="name">La Caja</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">San Jose</ns0:data>
+      <ns0:data key="canton">San Jose</ns0:data>
+      <ns0:data key="district">Uruca</ns0:data>
+      <ns0:data key="longitude">-84.16600079034203</ns0:data>
+      <ns0:data key="latitude">9.964701347633852</ns0:data>
+    </ns0:node>
+    <ns0:node id="ST_36">
+      <ns0:data key="objectid">36</ns0:data>
+      <ns0:data key="name">El Este</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">Cartago</ns0:data>
+      <ns0:data key="canton">La Union</ns0:data>
+      <ns0:data key="district">San Juan</ns0:data>
+      <ns0:data key="longitude">-83.99656919488059</ns0:data>
+      <ns0:data key="latitude">9.91028268425253</ns0:data>
+    </ns0:node>
+    <ns0:node id="ST_75">
+      <ns0:data key="objectid">75</ns0:data>
+      <ns0:data key="name">Ribera</ns0:data>
+      <ns0:data key="region">Central</ns0:data>
+      <ns0:data key="province">Heredia</ns0:data>
+      <ns0:data key="canton">Belen</ns0:data>
+      <ns0:data key="district">La Ribera</ns0:data>
+      <ns0:data key="longitude">-84.16955141939464</ns0:data>
+      <ns0:data key="latitude">9.991047925387758</ns0:data>
+    </ns0:node>
+    <ns0:edge source="ST_38" target="ST_44">
+      <ns0:data key="length_km">5.394501642661967</ns0:data>
+      <ns0:data key="voltage_kv">138</ns0:data>
+      <ns0:data key="circuits">1</ns0:data>
+      <ns0:data key="raw_weight">3.2367009855971802</ns0:data>
+      <ns0:data key="weight">3.2367009855971802</ns0:data>
+      <ns0:data key="line_objectids">8</ns0:data>
+      <ns0:data key="line_names">Cachi-Colima</ns0:data>
+      <ns0:data key="max_snap_distance_m">140.56820096594876</ns0:data>
+      <ns0:data key="detour_ratio">1.0904084523712059</ns0:data>
+      <ns0:data key="confidence">media confianza</ns0:data>
+      <ns0:data key="validation_status">VALIDADA</ns0:data>
+      <ns0:data key="evidence_ids">5beaaf739350e5f0a27b78322910f7bbb2f25192972255a45acc5b9948afe02d</ns0:data>
+      <ns0:data key="validation_basis">geoespacial</ns0:data>
+      <ns0:data key="manual_evidence_files" />
+      <ns0:data key="operational_connectivity_confirmed">False</ns0:data>
+    </ns0:edge>
+    <ns0:edge source="ST_63" target="ST_11">
+      <ns0:data key="length_km">3.278576115837841</ns0:data>
+      <ns0:data key="voltage_kv">138</ns0:data>
+      <ns0:data key="circuits">1</ns0:data>
+      <ns0:data key="raw_weight">1.9671456695027043</ns0:data>
+      <ns0:data key="weight">1.9671456695027043</ns0:data>
+      <ns0:data key="line_objectids">10</ns0:data>
+      <ns0:data key="line_names">El Este-La Caja</ns0:data>
+      <ns0:data key="max_snap_distance_m">74.5867964263957</ns0:data>
+      <ns0:data key="detour_ratio">1.0043120008062802</ns0:data>
+      <ns0:data key="confidence">alta confianza</ns0:data>
+      <ns0:data key="validation_status">VALIDADA</ns0:data>
+      <ns0:data key="evidence_ids">6f357624a79f5c4e1caab23629a4de0e54d94c5b78ba7b985a21c190882942a8</ns0:data>
+      <ns0:data key="validation_basis">geoespacial</ns0:data>
+      <ns0:data key="manual_evidence_files" />
+      <ns0:data key="operational_connectivity_confirmed">False</ns0:data>
+    </ns0:edge>
+    <ns0:edge source="ST_64" target="ST_36">
+      <ns0:data key="length_km">14.398023622579949</ns0:data>
+      <ns0:data key="voltage_kv">230</ns0:data>
+      <ns0:data key="circuits">1</ns0:data>
+      <ns0:data key="raw_weight">14.398023622579949</ns0:data>
+      <ns0:data key="weight">14.398023622579949</ns0:data>
+      <ns0:data key="line_objectids">21</ns0:data>
+      <ns0:data key="line_names">Rio Macho-San Miguel</ns0:data>
+      <ns0:data key="max_snap_distance_m">85.0592222437097</ns0:data>
+      <ns0:data key="detour_ratio">1.5349313580359563</ns0:data>
+      <ns0:data key="confidence">media confianza</ns0:data>
+      <ns0:data key="validation_status">VALIDADA</ns0:data>
+      <ns0:data key="evidence_ids">ca2bbe081ab28840e2c5226e3f10c03fff59029c975d522cee46db8538547198</ns0:data>
+      <ns0:data key="validation_basis">geoespacial</ns0:data>
+      <ns0:data key="manual_evidence_files" />
+      <ns0:data key="operational_connectivity_confirmed">False</ns0:data>
+    </ns0:edge>
+    <ns0:edge source="ST_64" target="ST_44">
+      <ns0:data key="length_km">5.777832629872588</ns0:data>
+      <ns0:data key="voltage_kv">230</ns0:data>
+      <ns0:data key="circuits">1</ns0:data>
+      <ns0:data key="raw_weight">5.777832629872588</ns0:data>
+      <ns0:data key="weight">5.777832629872588</ns0:data>
+      <ns0:data key="line_objectids">21</ns0:data>
+      <ns0:data key="line_names">Rio Macho-San Miguel</ns0:data>
+      <ns0:data key="max_snap_distance_m">85.0592222437097</ns0:data>
+      <ns0:data key="detour_ratio">1.2742098267545334</ns0:data>
+      <ns0:data key="confidence">media confianza</ns0:data>
+      <ns0:data key="validation_status">VALIDADA</ns0:data>
+      <ns0:data key="evidence_ids">70680564d3dde34c63c30a0c229de5a272ec4cc6634752df286795e2165483a1</ns0:data>
+      <ns0:data key="validation_basis">geoespacial</ns0:data>
+      <ns0:data key="manual_evidence_files" />
+      <ns0:data key="operational_connectivity_confirmed">False</ns0:data>
+    </ns0:edge>
+    <ns0:edge source="ST_44" target="ST_11">
+      <ns0:data key="length_km">13.244501862056893</ns0:data>
+      <ns0:data key="voltage_kv">230</ns0:data>
+      <ns0:data key="circuits">1</ns0:data>
+      <ns0:data key="raw_weight">13.244501862056893</ns0:data>
+      <ns0:data key="weight">13.244501862056893</ns0:data>
+      <ns0:data key="line_objectids">9</ns0:data>
+      <ns0:data key="line_names">San Miguel-La Caja-Belén</ns0:data>
+      <ns0:data key="max_snap_distance_m">111.89111397715841</ns0:data>
+      <ns0:data key="detour_ratio">1.0811303182474938</ns0:data>
+      <ns0:data key="confidence">media confianza</ns0:data>
+      <ns0:data key="validation_status">VALIDADA</ns0:data>
+      <ns0:data key="evidence_ids">8be69494b6962a9bda6b97165f6277b548c0aa5399ff0ce291aa2789db318bbd</ns0:data>
+      <ns0:data key="validation_basis">geoespacial</ns0:data>
+      <ns0:data key="manual_evidence_files" />
+      <ns0:data key="operational_connectivity_confirmed">False</ns0:data>
+    </ns0:edge>
+    <ns0:edge source="ST_28" target="ST_75">
+      <ns0:data key="length_km">0.6795465844023331</ns0:data>
+      <ns0:data key="voltage_kv">230</ns0:data>
+      <ns0:data key="circuits">1</ns0:data>
+      <ns0:data key="raw_weight">0.6795465844023331</ns0:data>
+      <ns0:data key="weight">0.6795465844023331</ns0:data>
+      <ns0:data key="line_objectids">9</ns0:data>
+      <ns0:data key="line_names">San Miguel-La Caja-Belén</ns0:data>
+      <ns0:data key="max_snap_distance_m">50.08232002491369</ns0:data>
+      <ns0:data key="detour_ratio">0.9327359169085354</ns0:data>
+      <ns0:data key="confidence">alta confianza</ns0:data>
+      <ns0:data key="validation_status">VALIDADA</ns0:data>
+      <ns0:data key="evidence_ids">da1b2d18499a74a92cb494d4654bf9716f5674c20d60efeb8ec99c8615619860</ns0:data>
+      <ns0:data key="validation_basis">geoespacial</ns0:data>
+      <ns0:data key="manual_evidence_files" />
+      <ns0:data key="operational_connectivity_confirmed">False</ns0:data>
+    </ns0:edge>
+    <ns0:edge source="ST_11" target="ST_75">
+      <ns0:data key="length_km">2.914285792656553</ns0:data>
+      <ns0:data key="voltage_kv">230</ns0:data>
+      <ns0:data key="circuits">1</ns0:data>
+      <ns0:data key="raw_weight">2.914285792656553</ns0:data>
+      <ns0:data key="weight">2.914285792656553</ns0:data>
+      <ns0:data key="line_objectids">9</ns0:data>
+      <ns0:data key="line_names">San Miguel-La Caja-Belén</ns0:data>
+      <ns0:data key="max_snap_distance_m">139.78380690366018</ns0:data>
+      <ns0:data key="detour_ratio">0.9913410842768192</ns0:data>
+      <ns0:data key="confidence">media confianza</ns0:data>
+      <ns0:data key="validation_status">VALIDADA</ns0:data>
+      <ns0:data key="evidence_ids">e052f130b05daa9c2667b17204db17fb16d40536d08159b8daf109476d63b1c7</ns0:data>
+      <ns0:data key="validation_basis">geoespacial</ns0:data>
+      <ns0:data key="manual_evidence_files" />
+      <ns0:data key="operational_connectivity_confirmed">False</ns0:data>
+    </ns0:edge>
+    <ns0:data key="region">Central</ns0:data>
+    <ns0:data key="source">ICE DT_SNIT_v2</ns0:data>
+    <ns0:data key="weight_definition">sum(route_length_km * voltage_kv / 230) por circuitos geométricamente distintos</ns0:data>
+  </ns0:graph>
+</ns0:graphml>

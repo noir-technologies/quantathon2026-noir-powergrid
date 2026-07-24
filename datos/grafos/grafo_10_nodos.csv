@@ -1,0 +1,11 @@
+node_index,node_id,objectid,name,region,province,canton,district,longitude,latitude,degree,weighted_degree,source_layer,source_url
+0,ST_11,11,La Caja,Central,San Jose,San Jose,Uruca,-84.16600079,9.964701348,4,29.948689729,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+1,ST_37,37,Lindora,Central,San Jose,Santa Ana,Pozos,-84.212897331,9.959517584,2,44.857010679,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+2,ST_44,44,San Miguel,Central,Heredia,Santo Domingo,San Miguel,-84.055369877,9.980248729,3,22.259035478,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+3,ST_63,63,Escazú,Central,San José,Escazú,San Rafael,-84.16153389,9.93551832,2,6.874281094,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+4,ST_75,75,Ribera,Central,Heredia,Belen,La Ribera,-84.169551419,9.991047925,2,3.593832377,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+5,ST_28,28,Belen,Central,Heredia,Belen,La Ribera,-84.172791275,9.996799473,1,0.679546584,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+6,ST_36,36,El Este,Central,Cartago,La Union,San Juan,-83.996569195,9.910282684,1,14.398023623,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+7,ST_64,64,Coronado,Central,San José,Vazquez de Coronado,Dulce Nombre,-84.016020249,9.992876487,2,20.175856252,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+8,ST_50,50,Tarbaca,Central,San Jose,Aserri,Tarbaca,-84.117308993,9.829920014,1,33.034254275,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3
+9,ST_38,38,Colima,Central,San Jose,Tibas,Colima,-84.090536779,9.952220777,1,3.236700986,ICE DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3

@@ -1,0 +1,4 @@
+region,regional_nodes,regional_edges,largest_component_nodes,largest_component_edges,supports_connected_6_8_10_12,minimum_required_snap_m,high_confidence_edges,medium_confidence_edges,high_confidence_proportion,geographic_extent_km,is_tree_largest_component,is_bipartite_largest_component,selection_rank,reason
+Central,31,16,12,11,True,230.626452917,3,13,0.1875,24.337433135,True,True,1,componente conectado suficiente
+Chorotega,24,11,7,6,False,,1,10,0.090909091,79.255108707,True,True,,no existe componente conectado de 12 nodos con la evidencia aceptada
+Huetar Brunca,17,8,6,5,False,,3,5,0.375,61.548727029,True,True,,no existe componente conectado de 12 nodos con la evidencia aceptada

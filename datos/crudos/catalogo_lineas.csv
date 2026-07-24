@@ -1,0 +1,49 @@
+line_objectid,line_name,voltage_code,voltage_kv,ruleid,shape_length_attribute,geometry_type,parts,geometry_valid,source_layer,source_url
+1,Arenal-Ciudad Quesada,1,230.0,5,0.743143557,MultiLineString,5,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+2,Rio Macho-Moin,1,230.0,5,1.040126264,MultiLineString,12,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+3,Arenal-Canas,1,230.0,5,0.147835927,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+4,Arenal-Barranca,1,230.0,5,0.604190598,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+5,Barranca-La Caja,1,230.0,5,0.58821299,MultiLineString,5,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+6,Barranca-La Garita,1,230.0,5,0.545557746,MultiLineString,4,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+7,Cachi-Moin,2,138.0,5,0.133131277,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+8,Cachi-Colima,2,138.0,5,0.405724455,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+9,San Miguel-La Caja-Belén,1,230.0,5,0.207752265,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+10,El Este-La Caja,2,138.0,5,0.276652725,MultiLineString,4,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+11,La Caja-Colima,2,138.0,5,0.106460814,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+12,Canas-Colorado,2,138.0,5,0.244553281,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+13,Canas-Guayabal,2,138.0,5,0.589214745,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+14,Canas-Barranca,1,230.0,5,0.614851513,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+15,Canas-Frontera,1,230.0,5,1.03209873,MultiLineString,6,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+16,Ciudad Quesada-San Miguel,1,230.0,5,0.737516441,MultiLineString,6,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+17,Colorado-Santa Rita,2,138.0,5,0.294212989,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+19,La Garita-La Caja,2,138.0,5,0.259941203,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+20,Miravalles-Liberia,1,230.0,5,0.365059569,MultiLineString,5,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+21,Rio Macho-San Miguel,1,230.0,5,0.454201348,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+22,Liberia-Papagayo,1,230.0,5,0.176939075,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+23,Papagayo_Nuevo Colon,1,230.0,5,0.212858417,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+26,Lindora-Tarbaca,1,230.0,5,0.300136806,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+29,Moin-Cahuita,1,230.0,5,0.388788721,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+32,Rio Macho-El Este138kV,2,138.0,5,0.222147686,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+33,Rio Macho-San Isidro,1,230.0,5,0.517918776,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+36,Trapiche-Leesville_Linea centro,1,230.0,5,0.291668859,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+38,Concavas-Agua Caliente,2,138.0,5,0.012102747,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+39,Poas-La Garita,2,138.0,5,0.152678011,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+40,General-Leesville,1,230.0,5,0.187834352,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+143,Sandillal-Corobici,1,230.0,5,0.027369406,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+167,Miravalles-Arenal,1,230.0,5,0.323749773,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+190,Parrita-Tarbaca,1,230.0,5,0.439430832,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+277,Cahuita-Sixaola,1,230.0,5,0.3998822,MultiLineString,3,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+393,Poas-Naranjo,2,138.0,5,0.136971832,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+409,Angostura-Concavas,2,138.0,5,0.296845655,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+413,Anonos-Alajuelita,2,138.0,5,0.019889657,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+453,Lindora-La Caja2,1,230.0,5,0.053005531,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+464,Cariblanco-General,1,230.0,5,0.698500001,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+470,Penas Blancas-La Garita,1,230.0,5,0.596019079,MultiLineString,2,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+471,Chucas-Garita,1,230.0,5,0.022229075,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+474,SIEPAC,,0.0,5,4.613805979,MultiLineString,10,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+513,Santa Rita-Cobano,2,138.0,5,0.423159127,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+570,San Isidro-Rio Claro,1,230.0,5,0.949027033,MultiLineString,4,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+615,Rio Claro-Progreso,1,230.0,5,0.334781397,MultiLineString,5,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+623,Pailas-Pailas2,1,230.0,5,0.016380296,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+624,Tejar-Pirris,1,230.0,5,0.125477367,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2
+656,Tanque-Tejona,1,230.0,5,0.043772298,LineString,1,True,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2

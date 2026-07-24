@@ -1,26 +1,43 @@
-# NOIR Technologies – Quantathon CR 2026 · Challenge 1
-# Centralized configuration for reproducibility
+project:
+  name: proyecto_grafos_ice_challenge
+  version: 4.2.2
+  purpose: etapa de recoleccion y construccion solicitada por Quantathon CR 2026
 
-graph:
-  source: "ICE"                    # Instituto Costarricense de Electricidad
-  data_path: "data/raw/ice_grid.json"
-  n_nodes_min: 6
-  n_nodes_max: 12
+data:
+  verify_official_service: true
+  geographic_crs: EPSG:4326
+  metric_crs: EPSG:5367
 
-qaoa:
-  backend: "pennylane"             # pennylane | qiskit | guppy
-  emulator: "quantinuum-h2"        # for final runs
-  p_values: [1, 2, 3]
-  n_runs: 10                       # min 5 per requirements
-  optimizer: "BFGS"
-  seed: 42
+topology:
+  max_snap_distance_m: 300
+  minimum_route_length_km: 0.01
+  confidence:
+    high_max_m: 75
+    medium_max_m: 150
+    low_max_m: 300
+    medium_detour_ratio: 1.25
+    low_detour_ratio: 1.60
+    reject_detour_ratio: 2.00
+  sensitivity_tolerances_m: [50, 75, 100, 125, 150, 200, 250, 300, 500, 750, 1000, 1500, 2500]
 
-classical:
-  run_greedy: true
-  run_goemans_williamson: true
-  run_brute_force: true            # feasible for <= 20 nodes
+validation:
+  allow_official_name_reinforcement: true
+  official_name_max_snap_m: 300
+  official_name_max_detour_ratio: 2.0
+  extended_geospatial_max_snap_m: 250
+  extended_geospatial_max_detour_ratio: 1.60
 
-output:
-  figures_dir: "results/figures"
-  runs_dir: "results/runs"
-  dpi: 300
+instances:
+  sizes: [6, 8, 10, 12]
+  require_connected: true
+  allow_trees: true
+  require_same_literal_region: true
+  require_nested_induced_subgraphs: true
+
+weights:
+  formula: route_length_km * (voltage_kv / 230)
+  normalization: none
+  parallel_circuits: sum_distinct_geometries
+
+maxcut:
+  epsilon: 1.0e-9

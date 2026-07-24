@@ -1,0 +1,3 @@
+resource,layer,url,local_file,sha256
+Subestaciones ICE,DT_SNIT_v2/FeatureServer/3,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/3,datos_crudos/subestaciones_ice.geojson,44564180c432d9c903baff8b8b08f4eacc272fce1297c06613125039d85f985c
+Líneas de transmisión ICE,DT_SNIT_v2/FeatureServer/2,https://geoportal.ice.go.cr/serverene/rest/services/Hosted/DT_SNIT_v2/FeatureServer/2,datos_crudos/lineas_transmision_ice.geojson,549020d9f80d4566300da36e75936e02494a2768d705d1bc0cd05b23d0a0a522

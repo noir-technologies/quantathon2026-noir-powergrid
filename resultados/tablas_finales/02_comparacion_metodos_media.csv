@@ -1,0 +1,29 @@
+n,metodo,razon_media,desviacion_razon,repeticiones_o_evaluaciones,origen
+6,Aleatorio teórico,0.5,,0,clásico
+6,Exacto,1.0,0.0,32,clásico
+6,Goemans-Williamson,1.0000000000000002,1.0393849418429316e-14,1000,clásico
+6,Greedy,0.9894404859784331,0.038682878901903014,100,clásico
+6,"QAOA ideal p=3, 512 tiros",0.9185130765470112,0.0048638576563207,30,30 lotes del mismo estado ideal optimizado
+6,Recocido simulado,1.0000000000000002,1.8644620177403316e-15,100,clásico
+6,"SelenePlus p=3, 512 tiros",0.6726675095993817,,1,un trabajo remoto con ruido
+8,Aleatorio teórico,0.4999999999999999,,0,clásico
+8,Exacto,1.0,0.0,128,clásico
+8,Goemans-Williamson,0.9999999999999998,1.1450338737727113e-14,1000,clásico
+8,Greedy,0.9739971757604082,0.053959588883678924,100,clásico
+8,"QAOA ideal p=3, 512 tiros",0.8951745362524665,0.0042776251115675,30,30 lotes del mismo estado ideal optimizado
+8,Recocido simulado,1.0,1.8606609964421604e-15,100,clásico
+8,"SelenePlus p=3, 512 tiros",0.5180923635702677,,1,un trabajo remoto con ruido
+10,Aleatorio teórico,0.4999999999999999,,0,clásico
+10,Exacto,1.0,0.0,512,clásico
+10,Goemans-Williamson,1.0,5.551657314520592e-15,1000,clásico
+10,Greedy,0.9598804849421324,0.04877804721020726,100,clásico
+10,"QAOA ideal p=3, 512 tiros",0.8727897434226074,0.0040409321984394,30,30 lotes del mismo estado ideal optimizado
+10,Recocido simulado,1.0000000000000002,1.148171917505167e-15,100,clásico
+10,"SelenePlus p=3, 512 tiros",0.5146358811217985,,1,un trabajo remoto con ruido
+12,Aleatorio teórico,0.5,,0,clásico
+12,Exacto,1.0,0.0,2048,clásico
+12,Goemans-Williamson,1.0,1.1124498308686982e-14,1000,clásico
+12,Greedy,0.9639885207754472,0.04079607706818663,100,clásico
+12,"QAOA ideal p=3, 512 tiros",0.8536168830056443,0.003967252422628,30,30 lotes del mismo estado ideal optimizado
+12,Recocido simulado,0.9990045668236364,0.004511753240879484,100,clásico
+12,"SelenePlus p=3, 512 tiros",0.5006111110920494,,1,un trabajo remoto con ruido
